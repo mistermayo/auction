@@ -1,0 +1,32 @@
+<<h1>{{title}}</h1>
+
+{{#if isEditing}}
+  <form>
+    <div class="form-control">
+    <label class for="title">Title of Category</label>
+      {{input value=title id="title" class="form-control"}}
+    </div>
+
+    <button class="btn btn-primary" {{action 'save'}}>Save</button>
+  </form>
+
+{{else}}
+
+<p>{{title}}</p>
+
+<button class="btn btn-primary" {{action 'edit'}}>Edit</button>
+{{/if}}
+
+{{outlet}}
+
+<h2>Items in Auction Lot</h2>
+{{#each item in items itemController="item"}}
+
+<p>
+  {{item.title}}{{item.text}}{{item.price}}
+  <button class="btn btn-xs btn-danger" {{action 'delete'}}>delete</button>
+</p>
+
+{{/each}}
+
+<p>{{#link-to 'new-item' this class="btn btn-success"}}New Item{{/link-to}}</p>
