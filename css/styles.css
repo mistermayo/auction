@@ -4,6 +4,11 @@ ul {
 
 li {
   list-style: none;
+  font-size: 2em;
+}
+
+li a {
+  color: orange;
 }
 
 #rumble {
@@ -13,4 +18,9 @@ li {
 
 #rumble-form {
   margin-bottom: 20px;
+}
+
+.jumbotron {
+  margin: 0px 25px;
+  background-color: #ddd;
 }
