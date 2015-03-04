@@ -1,15 +1,18 @@
-<<h1>{{title}}</h1>
+<h1>{{title}}</h1>
 
 {{#if isEditing}}
-  <form>
-    <div class="form-control">
-    <label class for="title">Title of Category</label>
-      {{input value=title id="title" class="form-control"}}
-    </div>
-
-    <button class="btn btn-primary" {{action 'save'}}>Save</button>
-  </form>
-
+  <div class="form-div">
+    <form>
+      <div class="form-control">
+        <label class for="title">Title of Category</label>
+        {{input value=title id="title" class="form-control"}}
+      </div>
+    </form>
+  </div>
+  <div class="button-div">
+    <button class="btn btn-success" {{action 'save'}}>Save</button>
+  </div>
+  
 {{else}}
 
 <p>{{title}}</p>
@@ -23,7 +26,7 @@
 {{#each item in items itemController="item"}}
 
 <p>
-  {{item.title}}{{item.text}}{{item.price}}
+  {{item.text}}
   <button class="btn btn-xs btn-danger" {{action 'delete'}}>delete</button>
 </p>
 
