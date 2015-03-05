@@ -25,11 +25,11 @@
 <h2>Items in Auction Lot</h2>
 {{#each item in items itemController="item"}}
 
-<p>
-  {{item.text}}
+<li>
+  {{#link-to 'item' this class="btn btn-success"}}  {{item.text}}   {{/link-to}}
+    <!-- description: {{item.description}}, current owner: {{item.owner}} -->
   <button class="btn btn-xs btn-danger" {{action 'delete'}}>delete</button>
-</p>
-
+</li>
 {{/each}}
 
 <p>{{#link-to 'new-item' this class="btn btn-success"}}New Item{{/link-to}}</p>
