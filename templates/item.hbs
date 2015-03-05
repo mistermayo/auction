@@ -1,4 +1,5 @@
-<h3>{{text}}</h3>
+{{#each item in items itemController="item"}}
+<h3>{{item.text}}</h3>
 
-anything here
-description: {{description}}, current owner: {{owner}}
+<ul>description: {{item.description}}, current owner: {{item.owner}}</ul>
+ {{/each}}

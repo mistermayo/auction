@@ -1,4 +1,5 @@
 Auction.NewItemController = Ember.ObjectController.extend({
+  
   actions: {
     save: function() {
       var item = this.get('model');

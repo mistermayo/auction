@@ -18,6 +18,8 @@
 <p>{{title}}</p>
 
 <button class="btn btn-primary" {{action 'edit'}}>Edit</button>
+<button class="btn btn-sm btn-danger" {{action 'delete'}}>DELETE</button>
+
 {{/if}}
 
 {{outlet}}
@@ -26,8 +28,7 @@
 {{#each item in items itemController="item"}}
 
 <li>
-  {{#link-to 'item' this class="btn btn-success"}}  {{item.text}}   {{/link-to}}
-    <!-- description: {{item.description}}, current owner: {{item.owner}} -->
+  {{#link-to 'item' this class="btn btn-success"}}  item {{item.text}}   {{/link-to}}
   <button class="btn btn-xs btn-danger" {{action 'delete'}}>delete</button>
 </li>
 {{/each}}
