@@ -2,7 +2,10 @@
 
 <ul>
   {{#each category in model}}
-    <li>{{#link-to 'category' category}}{{category.title}}{{/link-to}}</li>
+    <li>
+      {{#link-to 'category' category}}{{category.title}}{{/link-to}}
+    <button class="btn btn-sm btn-danger" {{action 'delete'}}>DELETE</button>
+    </li>
   {{/each}}
 </ul>
 
