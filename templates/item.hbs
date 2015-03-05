@@ -1,5 +1,35 @@
-{{#each item in items itemController="item"}}
-<h3>{{item.text}}</h3>
+<div class="row">
+  <div class='col-md-12'>
+    {{#each item in items itemController="item"}}
+    <div class="item well row">
+      <h3>{{item.text}}</h3>
+<!-- 
+      <div class='col-md-3'>
+        <img {{bind-attr src=image}}/>
+      </div> -->
 
-<ul>description: {{item.description}}, current owner: {{item.owner}}</ul>
- {{/each}}
+    <div class='col-md-9'>
+      <p>
+        <span class="item-info">description: {{item.description}}</span><br>
+      </p>
+      <p>
+        <span class="bid-number">Bid Number: {{item.bid-number}}</span><br>
+      </p>
+      <p>
+        <span class="item-info">owner: {{item.owner}}</span><br>
+      </p>
+      <p>
+        <span class="year-acquired">Year Acquired: {{item.year-acquired}}</span><br>
+      </p>
+      <p>
+        <span class="price">Starting Price {{item.price}}</span><br>
+      </p>
+      <p>
+        <span class="backstory">Backstory {{item.backstory}}</span><br>
+      </p>
+    </div>
+  </div>
+      {{/each}}
+
+    </div>
+</div>
