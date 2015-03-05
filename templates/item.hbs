@@ -3,26 +3,29 @@
     {{#each item in items itemController="item"}}
     <div class="item well row">
       <h3>{{item.text}}</h3>
-<!-- 
+
       <div class='col-md-3'>
-        <img {{bind-attr src=image}}/>
-      </div> -->
+        <figure class="well">
+          <img {{bind-attr src=item.image}}>
+          <figcaption>{{item.text}}</figcaption>
+        </figure>
+      </div>
 
     <div class='col-md-9'>
       <p>
         <span class="item-info">description: {{item.description}}</span><br>
       </p>
       <p>
-        <span class="bid-number">Bid Number: {{item.bid-number}}</span><br>
+        <span class="item-info">Bid Number# {{item.bidNumber}}</span><br>
       </p>
       <p>
         <span class="item-info">owner: {{item.owner}}</span><br>
       </p>
       <p>
-        <span class="year-acquired">Year Acquired: {{item.year-acquired}}</span><br>
+        <span class="item-info">Year Acquired: {{item.yearAcquired}}</span><br>
       </p>
       <p>
-        <span class="price">Starting Price {{item.price}}</span><br>
+        <span class="price">Starting Price: $ {{item.price}}</span><br>
       </p>
       <p>
         <span class="backstory">Backstory {{item.backstory}}</span><br>

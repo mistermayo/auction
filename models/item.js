@@ -6,6 +6,8 @@ Auction.Item = DS.Model.extend({
   price: DS.attr(),
   backstory: DS.attr(),
   yearAcquired: DS.attr(),
+  bidNumber: DS.attr(),
+
   owner: DS.attr(),
   category: DS.belongsTo('category', {async: true})
 });
