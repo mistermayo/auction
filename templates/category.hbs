@@ -25,13 +25,23 @@
 {{outlet}}
 
 <h2>Items in Auction Lot</h2>
-{{#each item in items itemController="item"}}
+  <div class="thumbnails">
+    <ul>
+      {{#each item in items itemController="item"}}
+        <li>
+            {{#link-to 'item' this class="btn btn-success"}}
+            {{item.text}}<br />
+           ${{item.price}}<br />
+           {{item.description}}<br />
+              <img {{bind-attr src=item.image}} style="width: 100px; height:auto"><br />
+              <button class="btn btn-xs btn-danger" {{action 'delete'}}>delete</button>
 
-<li>
-  {{#link-to 'item' this class="btn btn-success"}}  item {{item.text}}   {{/link-to}}
-  <button class="btn btn-xs btn-danger" {{action 'delete'}}>delete</button>
-</li>
-{{/each}}
+            {{/link-to}}
+       </li>
+      {{/each}}
+    </ul>
+  </div>
+<br />
 
 <p>{{#link-to 'new-item' this class="btn btn-success"}}New Item{{/link-to}}</p>
 <div>
